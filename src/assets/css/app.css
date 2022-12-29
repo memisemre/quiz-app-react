@@ -10,6 +10,17 @@
 body{
       background-color: var(--black);
 }
+#root{
+      width: 100%;
+      height: 100vh;
+}
+.app-container{
+      width: calc(100% - 90px);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
 .socialMediaContainer{
       border-left: 2px solid var(--green);
       position: absolute;
@@ -50,5 +61,46 @@ body{
       color: white;
 }
 .socialMediaContainer .website:hover{
+      color: white;
+}
+.step-progress-container{
+      color: white;
+}
+.step-progress-container ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+.step-progress-container ul li{
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 32px;
+      color: #6E6E6E;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #32353a, #3b3f44);
+      cursor: pointer;
+      transition: 0.5s all ease-in-out;
+      font-weight: bold;
+}
+.step-progress-container ul li:last-child{
+      margin-right: 0;
+}
+.step-progress-container ul li:hover{
+      color: var(--green);
+}
+.step-progress-container ul li.true{
+      color: greenyellow;
+      border: 1px solid greenyellow;
+}
+.step-progress-container ul li.false{
+      color: red;
+      border: 1px solid var(--mail);
+}
+.step-progress-container ul li.active{
+      border: 1px solid var white;
       color: white;
 }

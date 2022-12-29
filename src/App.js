@@ -1,8 +1,9 @@
 import React from "react";
-const App = ()=>{
+import StepProgressBar from "./components/stepProgressBar/spIndex";
+export default function App(){
       return (
-            <div className="appContainer">
+            <div className="app-container">
+                  <StepProgressBar />
             </div>
       )
 }
-export default App;
