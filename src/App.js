@@ -1,9 +1,10 @@
 import React from "react";
-import StepProgressBar from "./components/stepProgressBar/spIndex";
-export default function App(){
-      return (
-            <div className="app-container">
-                  <StepProgressBar />
-            </div>
-      )
+import Loader from "./components/loader/loader";
+class App extends React.Component{
+      render(){
+            return (
+                  <Loader />
+            )
+      }
 }
+export default App;

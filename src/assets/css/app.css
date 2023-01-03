@@ -1,14 +1,11 @@
 :root{
-      --green: #4deeea;
+      --green: #FFCC00;
       --black: #373B40;
       --twitter: #1da1f2;
       --linkedin: #0077B5;
-      --medium: white;
+      --medium: black;
       --mail: #ff0000;
       --cv: white;
-}
-body{
-      background-color: var(--black);
 }
 #root{
       width: 100%;
@@ -22,28 +19,27 @@ body{
       justify-content: center;
 }
 .socialMediaContainer{
-      border-left: 2px solid var(--green);
+      width: 50%;
       position: absolute;
-      top: 0;
-      right: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      padding: 0 24px;
-      height: 100vh;
+      height: 10vh;
 }
 .socialMediaContainer a{
-      margin-bottom: 2vh;
+      margin-left: 32px;
       font-size: 32px;
       color: var(--green);
       transition: 0.5s all ease;
 }
-.socialMediaContainer a:last-child{
-      margin-bottom: 0;
+.socialMediaContainer a:first-child{
+      margin-left: 0;
 }
 .socialMediaContainer .github:hover{
-      color: white;
+      color: black;
 }
 .socialMediaContainer .twitter:hover{
       color: var(--twitter);
@@ -58,49 +54,81 @@ body{
       color: var(--mail);
 }
 .socialMediaContainer .codepen:hover{
-      color: white;
+      color: black;
 }
 .socialMediaContainer .website:hover{
-      color: white;
+      color: black;
 }
-.step-progress-container{
-      color: white;
+.loader-container{
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%,-50%);
+      animation: loaderBallAnimation 5s linear infinite;
+      animation-delay: 0.25s;
 }
-.step-progress-container ul{
+.loader-container .half-ball{
+      width: 256px;
+      height: 128px;
+      background-color: red;
+      border: 16px solid black;
+      border-bottom: none;
+      border-top-left-radius: 138px;
+      border-top-right-radius: 138px;
+}
+.loader-container .top-ball{
+      position: relative;
+      z-index: 2;
+}
+.loader-container .top-ball::after{
+      width: 100%;
+      height: 16px;
+      background-color: black;
+      content: "";
+      position: absolute;
+      bottom: -8px;
+}
+.loader-container .bottom-ball{
+      transform: rotate(180deg);
+      background-color: white;
+}
+.loader-container .center-ball{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      border: 16px solid black;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
 }
-.step-progress-container ul li{
-      width: 64px;
-      height: 64px;
+.loader-container .center-ball .dot{
+      width: 32px;
+      height: 32px;
+      background-color: black;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 32px;
-      color: #6E6E6E;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #32353a, #3b3f44);
-      cursor: pointer;
-      transition: 0.5s all ease-in-out;
-      font-weight: bold;
+      animation: loaderCenterDotAnimation 1s infinite;
 }
-.step-progress-container ul li:last-child{
-      margin-right: 0;
+@keyframes loaderBallAnimation {
+      0%,100%{
+            left: 25%;
+            transform: translate(-50%, -50%) rotateZ(0);
+      }
+      50% { 
+            left: 75%;
+            transform: translate(-50%,-50%) rotateZ(360deg);
+      } 
 }
-.step-progress-container ul li:hover{
-      color: var(--green);
-}
-.step-progress-container ul li.true{
-      color: greenyellow;
-      border: 1px solid greenyellow;
-}
-.step-progress-container ul li.false{
-      color: red;
-      border: 1px solid var(--mail);
-}
-.step-progress-container ul li.active{
-      border: 1px solid var white;
-      color: white;
+@keyframes loaderCenterDotAnimation {
+      0%,100%{
+            background-color: black;
+      }
+      50%{
+            background-color: red;
+      }
 }
