@@ -6,8 +6,8 @@ import './assets/css/reset.css'
 import SocialMediaLinks from './components/socialMedia/smIndex';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <SocialMediaLinks />
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+		<App />
+		<SocialMediaLinks />
+	</React.StrictMode>
 );

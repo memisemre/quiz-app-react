@@ -1,0 +1,32 @@
+[
+      {
+            "questionId" : 1,
+            "qeustion" : "Who's the main character in Pokemon ?",
+            "answerOptions" : ["Ash","Professor Oak","Pikachu","Misty"],
+            "trueAnswer" : "Ash"
+      },
+      {
+            "questionId" : 2,
+            "qeustion" : "What colour is Ash's hat ?",
+            "answerOptions" : ["Purple","White","Red","Pink"],
+            "trueAnswer" : "Red"
+      },
+      {
+            "questionId" : 3,
+            "qeustion" : "How many evolutions does Eevee have ?",
+            "answerOptions" : ["4","6","8","10"],
+            "trueAnswer" : "8"
+      },
+      {
+            "questionId" : 4,
+            "qeustion" : "What type of Pokemon is Pikachu ?",
+            "answerOptions" : ["Fire","Mystic","Electric","Water"],
+            "trueAnswer" : "Electric"
+      },
+      {
+            "questionId" : 5,
+            "qeustion" : "What colour is pollywag ?",
+            "answerOptions" : ["Red","Blue","Pink","Purple"],
+            "trueAnswer" : "Blue"
+      }
+]
