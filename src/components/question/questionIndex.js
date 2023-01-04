@@ -37,7 +37,7 @@ class QuestionArea extends React.Component {
 				this.changeQuestion();
 				this.setState({invalidAnswers : this.state.invalidAnswers +1});
 			}
-		}, 1000);
+		}, 100);
 	}
 	render() {
 		const activeQuestion = Questions[this.state.questionIndex];
