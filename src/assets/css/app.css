@@ -146,6 +146,9 @@
 .question-container h1{
       color: red;
 }
+.question-container h1:last-child{
+      margin-top: 2vh;
+}
 .question-container .answers-container{
       margin-top: 5vh;
       width: 50%;
@@ -167,6 +170,7 @@
 .end-page-container{
       font-size: 32px;
       display: flex;
+      flex-direction: column;
       font-weight: bold;
 }
 .end-page-container .true{
@@ -175,4 +179,8 @@
 }
 .end-page-container .false{
       color: red;
+      margin-right: 32px;
+}
+.end-page-container .invalid{
+      color: gray;
 }

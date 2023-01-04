@@ -5,19 +5,48 @@ class QuestionArea extends React.Component {
 	state = {
 		questionIndex: 0,
 		trueAnswers: 0,
-		falseAnswers: 0
+		falseAnswers: 0,
+		timerValue: 0,
+		invalidAnswers : 0
 	}
 	checkAnswer = (answerOption, trueAnswer) => {
-		if (answerOption === trueAnswer) this.setState({ trueAnswers: this.state.trueAnswers + 1 })
-		else this.setState({ falseAnswers: this.state.falseAnswers + 1 })
+		answerOption === trueAnswer ? (
+			this.setState({ trueAnswers: this.state.trueAnswers + 1 })
+		) : (
+			this.setState({ falseAnswers: this.state.falseAnswers + 1 })
+		)
 	}
-	changeQuestion = () => this.setState({ questionIndex: this.state.questionIndex + 1 })
+	changeQuestion = () => {
+		if(this.state.questionIndex !== Questions.length){
+			this.setState({ questionIndex: this.state.questionIndex + 1 })
+			this.timer();
+		}
+	}
+	componentDidMount() {
+		this.timer();
+	}
+	timer = () => {
+		clearInterval(this.interval);
+		this.setState({ timerValue: 5 });
+		this.interval = setInterval(() => {
+			this.setState({
+				timerValue : this.state.timerValue -1
+			})
+			if (this.state.timerValue === 0) {
+				clearInterval(this.interval);
+				this.changeQuestion();
+				this.setState({invalidAnswers : this.state.invalidAnswers +1});
+			}
+		}, 1000);
+	}
 	render() {
 		const activeQuestion = Questions[this.state.questionIndex];
-		if (this.state.questionIndex === Questions.length) {
+		if (this.state.questionIndex === Questions.length){
+			clearInterval(this.interval)
 			return <EndPage
 				trueAnswers={this.state.trueAnswers}
 				falseAnswers={this.state.falseAnswers}
+				invalidAnswers = {this.state.invalidAnswers}
 			/>
 		}
 		else {
@@ -27,7 +56,7 @@ class QuestionArea extends React.Component {
 					<div className='answers-container'>
 						{activeQuestion.answerOptions.map(answerOption =>
 							<button
-								onClick={()=>{
+								onClick={() => {
 									this.checkAnswer(answerOption, activeQuestion.trueAnswer)
 									this.changeQuestion()
 								}}
@@ -35,6 +64,7 @@ class QuestionArea extends React.Component {
 								{answerOption}
 							</button>)}
 					</div>
+					<h1> {this.state.timerValue} </h1>
 				</div>
 			)
 		}
