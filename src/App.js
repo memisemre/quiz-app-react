@@ -1,15 +1,19 @@
 import React from "react";
-import Loader from "./components/loader/loader";
-import QuestionArea from "./components/question/questionIndex";
+import Loading from "./components/loading";
+import QuestionArea from "./components/question";
 class App extends React.Component{
-      state = {
-            isLoaded : false
-      }
-      componentDidMount(){
-            setTimeout(()=>{ this.setState({ isLoaded: true }) } ,2500)
-      }
-      render(){
-            return this.state.isLoaded ? <QuestionArea /> : <Loader />
-      }
+  constructor(props) {
+    super(props);
+
+    this.state = { isLoaded: false };
+  }
+
+  componentDidMount(){
+    setTimeout(()=>{ this.setState({ isLoaded: true }); }, 2500);
+  }
+
+  render(){
+    return this.state.isLoaded ? <QuestionArea /> : <Loading />;
+  }
 }
 export default App;
