@@ -1,6 +1,6 @@
 import React from "react";
-import Loader from "./components/loader/loader";
-import QuestionArea from "./components/question/questionIndex";
+import Loading from "./components/loading";
+import QuestionArea from "./components/question";
 class App extends React.Component{
       state = {
             isLoaded : false
@@ -9,7 +9,7 @@ class App extends React.Component{
             setTimeout(()=>{ this.setState({ isLoaded: true }) } ,2500)
       }
       render(){
-            return this.state.isLoaded ? <QuestionArea /> : <Loader />
+            return this.state.isLoaded ? <QuestionArea /> : <Loading />
       }
 }
 export default App;

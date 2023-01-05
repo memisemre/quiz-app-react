@@ -1,6 +1,6 @@
 import React from "react";
 
-class Loader extends React.Component {
+class Loading extends React.Component {
   	render() {
     	return (
       		<div className="loader-container">
@@ -13,4 +13,4 @@ class Loader extends React.Component {
     	);
   	}
 }
-export default Loader;
+export default Loading;

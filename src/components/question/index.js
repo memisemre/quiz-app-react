@@ -1,5 +1,5 @@
 import React from 'react';
-import EndPage from '../endPage/endPage';
+import EndPage from '../endPage';
 import Questions from './questions.json';
 class QuestionArea extends React.Component {
 	state = {

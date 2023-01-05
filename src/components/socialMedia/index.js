@@ -1,5 +1,5 @@
 import React from 'react';
-import { SOCIAL_MEDIAS } from './smConstants';
+import { SOCIAL_MEDIAS } from './constants';
 class SocialMediaLinks extends React.Component {
 	render() {
 		return (
