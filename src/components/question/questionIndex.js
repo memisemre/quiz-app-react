@@ -56,7 +56,7 @@ class QuestionArea extends React.Component {
 					<div className='answers-container'>
 						{activeQuestion.answerOptions.map(answerOption =>
 							<button
-								onClick={() => {
+								onClick={()=>{
 									this.checkAnswer(answerOption, activeQuestion.trueAnswer)
 									this.changeQuestion()
 								}}
