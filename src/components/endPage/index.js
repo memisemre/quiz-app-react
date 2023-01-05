@@ -1,5 +1,7 @@
 import React from 'react';
 import App from '../../App';
+import { number } from 'prop-types';
+
 class EndPage extends React.Component {
   state = {
     restartGame: false
@@ -21,5 +23,11 @@ class EndPage extends React.Component {
     }
   }
 }
+
+EndPage.propTypes = {
+  trueAnswers: number.isRequired,
+  falseAnswers: number.isRequired,
+  invalidAnswers: number.isRequired
+};
 
 export default EndPage;
