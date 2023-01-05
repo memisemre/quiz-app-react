@@ -19,5 +19,6 @@ module.exports = {
   ],
   "rules": {
     "indent": ["error", 2],
+    "no-self-import": true
   }
 }
