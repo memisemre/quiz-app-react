@@ -41,4 +41,4 @@ export const SOCIAL_MEDIAS = [
     url: "https://memisemre.github.io/emrememis/",
     iconClass: "fa-solid fa-link"
   }
-]
+];

@@ -13,10 +13,10 @@ class SocialMediaLinks extends React.Component {
             target='_blank'
             rel='noreferrer'>
             <i className={iconClass}></i>
-          </a>
+          </a>;
         })}
       </div>
-    )
+    );
   }
 }
 export default SocialMediaLinks;
